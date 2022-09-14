@@ -7,7 +7,7 @@ import { pdb } from "bdsx/core";
 import { events } from "bdsx/event";
 import { bedrockServer } from "bdsx/launcher";
 import { NativeClass } from "bdsx/nativeclass";
-import { int32_t, void_t } from "bdsx/nativetype";
+import { uint32_t, void_t } from "bdsx/nativetype";
 import { procHacker } from "bdsx/prochacker";
 import * as fs from "fs";
 import * as path from "path";
@@ -21,7 +21,7 @@ if (!fs.existsSync(IMAGE_PATH)) fs.mkdirSync(IMAGE_PATH);
 pdb.setOptions(0);
 
 MapItemSavedData.prototype.save = procHacker.js("?save@MapItemSavedData@@QEAAXAEAVLevelStorage@@@Z", void_t, { this: MapItemSavedData }, LevelStorage);
-MapItemSavedData.prototype.setPixel = procHacker.js("?setPixel@MapItemSavedData@@QEAAXIII@Z", void_t, { this: MapItemSavedData }, int32_t, int32_t, int32_t);
+MapItemSavedData.prototype.setPixel = procHacker.js("?setPixel@MapItemSavedData@@QEAA_NIII@Z", void_t, { this: MapItemSavedData }, uint32_t, uint32_t, uint32_t);
 MapItemSavedData.prototype.setLocked = procHacker.js("?setLocked@MapItemSavedData@@QEAAXXZ", void_t, { this: MapItemSavedData });
 MapItemSavedData.prototype.getMapId = procHacker.js("?getParentMapId@MapItemSavedData@@QEBA?AUActorUniqueID@@XZ", ActorUniqueID, { this: MapItemSavedData });
 
